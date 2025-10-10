@@ -109,12 +109,16 @@ def get_schedule_temperature_for_timestamp(schedule_str: str, timestamp: datetim
     else:
         day_idx = 2
 
+    prevday = (day_idx - 1)
+    if day_idx < 0:
+        prevday = 2
+
     day_schedule = schedule[day_idx]
     hour = timestamp.hour
     minute = timestamp.minute
 
     # Find the last time slot that is not later than the timestamp
-    last_temp = None
+    last_temp = schedule[prevday][-1][2]  # default to last slot of previous day
     for h, m, t in day_schedule:
         if h is None or m is None or t is None:
             continue
