@@ -4,7 +4,6 @@ Setup for different kinds of Tuya climate devices
 
 import logging
 import base64
-from typing import list, tuple
 from datetime import datetime
 
 from homeassistant.components.climate import (
