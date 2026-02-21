@@ -258,6 +258,8 @@ class TuyaLocalClimate(TuyaLocalEntity, ClimateEntity):
                 except Exception as e:
                     _LOGGER.info("Failed to decode schedule [%s]: %s", schedule, e)
 
+        if  self.hvac_mode is HVACMode.OFF:
+            return None
         if self._temperature_dps is None:
             raise NotImplementedError()
         return self._temperature_dps.get_value(self._device)
