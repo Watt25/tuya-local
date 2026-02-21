@@ -59,8 +59,6 @@ entities:
         name: sensor
         unit: ugm3
         class: measurement
-        mapping:
-          - scale: 0.1
   - entity: sensor
     class: volatile_organic_compounds
     dps:
@@ -69,15 +67,13 @@ entities:
         name: sensor
         unit: ugm3
         class: measurement
-        mapping:
-          - scale: 0.1
   - entity: sensor
     class: pm25
     dps:
       - id: 7
         type: integer
         name: sensor
-        unit: µg/m³
+        unit: ugm3
         class: measurement
   - entity: sensor
     class: pm10
@@ -85,7 +81,7 @@ entities:
       - id: 9
         type: integer
         name: sensor
-        unit: µg/m³
+        unit: ugm3
         class: measurement
   - entity: sensor
     class: battery

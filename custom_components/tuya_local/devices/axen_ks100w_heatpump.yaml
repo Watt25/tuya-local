@@ -31,18 +31,17 @@ entities:
         optional: true
         name: fault_flag
   - entity: switch
-    name: Mute
-    icon: "mdi:volume-mute"
-    icon_priority: 2
+    translation_key: sound
     category: config
     dps:
       - id: 101
         type: boolean
         name: switch
         mapping:
+          - dps_val: true
+            value: false
           - dps_val: false
-            icon: "mdi:volume-high"
-            icon_priority: 1
+            value: true
   - entity: climate
     dps:
       - id: 1
@@ -161,7 +160,7 @@ entities:
         mapping:
           - scale: 10
   - entity: water_heater
-    translation_only_key: water_air
+    translation_only_key: hot_water
     dps:
       - id: 1
         type: boolean
@@ -216,20 +215,6 @@ entities:
             value: hotwater_heat
           - dps_val: auto_dhw
             value: hotwater_auto
-  - entity: sensor
-    name: Inlet temperature
-    class: temperature
-    # 2025-05-13
-    deprecated: climate current_temperature
-    category: diagnostic
-    dps:
-      - id: 106
-        type: integer
-        name: sensor
-        unit: C
-        class: measurement
-        mapping:
-          - scale: 10
   - entity: sensor
     name: Outlet temperature
     class: temperature
@@ -339,7 +324,7 @@ entities:
         name: sensor
         class: measurement
   - entity: sensor
-    name: AC Fan
+    name: AC fan
     icon: "mdi:fan-auto"
     class: enum
     category: diagnostic

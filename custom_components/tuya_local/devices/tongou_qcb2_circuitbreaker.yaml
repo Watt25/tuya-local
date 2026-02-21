@@ -341,6 +341,7 @@ entities:
   - entity: button
     translation_key: factory_reset
     category: config
+    hidden: true
     dps:
       - id: 113
         type: boolean
@@ -488,7 +489,7 @@ entities:
         mapping:
           - scale: 10
   - entity: sensor
-    name: Temperature Neutral
+    name: Temperature neutral
     class: temperature
     category: diagnostic
     dps:

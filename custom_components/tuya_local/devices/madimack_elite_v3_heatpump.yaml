@@ -1,4 +1,4 @@
-name: Pool heatpump
+name: Pool heat pump
 entities:
   - entity: climate
     translation_only_key: pool_heatpump
@@ -86,7 +86,6 @@ entities:
   - entity: sensor
     category: diagnostic
     name: Power level
-    class: power_factor
     dps:
       - id: 20
         type: integer
